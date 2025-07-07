@@ -12,7 +12,7 @@ public class MemberController {
         return member;
     }
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String index() {
         return "Hello World";
     }
