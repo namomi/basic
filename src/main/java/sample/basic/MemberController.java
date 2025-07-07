@@ -11,4 +11,10 @@ public class MemberController {
         Member member = new Member("Kim", 20);
         return member;
     }
+
+    @GetMapping("/")
+    public String index() {
+        return "Hello World";
+    }
+
 }
