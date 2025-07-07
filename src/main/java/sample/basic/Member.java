@@ -2,6 +2,7 @@ package sample.basic;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Entity
@@ -12,6 +13,7 @@ import lombok.RequiredArgsConstructor;
         initialValue = 1,
         allocationSize = 1
 )
+@NoArgsConstructor
 public class Member {
 
     @Id
