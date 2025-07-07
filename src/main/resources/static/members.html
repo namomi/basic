@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Spring JSON 데이터 받기</title>
+</head>
+<body>
+<h1>Spring Controller JSON 데이터 받기</h1>
+<div id="result">데이터 로딩 중...</div>
+
+<script>
+    async function fetchSpringData() {
+        try {
+            const response = await fetch('/member');
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            document.getElementById('result').innerHTML =
+                `<h3>받은 데이터:</h3>
+                     <p>사용자명: ${data.name}</p>
+                     <p>나이: ${data.age}</p>`;
+
+        } catch (error) {
+            console.error('데이터 가져오기 실패:', error);
+            document.getElementById('result').innerHTML =
+                `<p style="color: red;">에러: ${error.message}</p>`;
+        }
+    }
+
+    // 페이지 로드 시 자동으로 데이터 가져오기
+    window.addEventListener('load', fetchSpringData);
+</script>
+</body>
+</html>
