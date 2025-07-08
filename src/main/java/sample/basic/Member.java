@@ -3,7 +3,6 @@ package sample.basic;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @Getter
@@ -11,7 +10,7 @@ import lombok.RequiredArgsConstructor;
         name = "member_seq",
         sequenceName = "MEMBER_SEQ",
         initialValue = 1,
-        allocationSize = 1
+        allocationSize = 50
 )
 @NoArgsConstructor
 public class Member {
